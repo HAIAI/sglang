@@ -14,7 +14,7 @@ jobs:
     environment: 'prod'
     strategy:
       matrix:
-        vendor_version: ['11.8.0', '12.1.1', '12.4.1', '6.2.0']
+        vendor_version: ['12.4.1', '6.2.0']
         build_type: ['all', 'srt']
     steps:
       - name: Delete huge unnecessary tools folder
