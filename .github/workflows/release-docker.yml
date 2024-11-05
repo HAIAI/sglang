@@ -9,7 +9,7 @@ on:
 
 jobs:
   publish:
-    if: github.repository == 'sgl-project/sglang'
+    if: github.repository == 'HAIAI/sglang'
     runs-on: ubuntu-latest
     environment: 'prod'
     strategy:
@@ -65,7 +65,7 @@ jobs:
           docker push henryx/haisgl:${tag}${tag_suffix}
 
           if [ "${{ matrix.vendor_version }}" = "12.1.1" ]; then
-            docker tag lmsysorg/sglang:${tag}${tag_suffix} lmsysorg/sglang:latest${tag_suffix}
-            docker push lmsysorg/sglang:latest${tag_suffix}
+            docker tag henryx/haisgl:${tag}${tag_suffix} henryx/haisgl:latest${tag_suffix}
+            docker push henryx/haisgl:latest${tag_suffix}
           fi
 
